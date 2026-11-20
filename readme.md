@@ -25,3 +25,37 @@
    ```bash
    pip install -r requirements.txt
    ```
+
+
+## the process
+1.  **python (-append)? get_chapters_urls.py output_filename input_url**
+
+	output_filename = the json file to export the urls of the html pages to download.
+	
+	input_url=the url to the page that contain the links of the output urls
+	
+	-append=for appending another urls the the existing list in an existing output_filename
+	
+
+2.  **python chapters_downloaders.py input_filename output_folder_path**
+
+	input_filename - the output_file from the previous stage that contains a list of urls to html pages.
+
+	output_folder_path- the path to download the html files to.
+
+
+3. python get_html_files_list.py output_filename folder_path (might in the future combined in stage 4)
+
+	output_filename= the json file that will contain a list of the paths to all the  raw html files from the previous stage.
+
+	folderpath= the path to the folder contain all those files
+
+
+4. **python chapters_parser.py input_filepath output_folder_path**
+
+	input_filepath = the path to the file contains the paths to all the raw html files from the previous stage
+
+	output_folder_path= the path to the folder that will contain all the json files with the rows dictionaries.
+	
+
+
